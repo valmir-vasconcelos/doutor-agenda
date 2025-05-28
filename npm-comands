@@ -37,6 +37,8 @@ npx shadcn@2.5.0 add input label
 
 npx shadcn@2.5.0 add form
 
+npx shadcn@2.5.0 add sonner
+
 npm i dotenv@16.5.0
 
 npm install better-auth@1.2.7
