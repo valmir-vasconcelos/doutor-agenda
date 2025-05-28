@@ -1,15 +1,15 @@
 npx create-next-app@15.3.2 doutor-agenda
 
 ✔ What is your project named? … doutor-agenda
-✔ Would you like to use TypeScript? …  Yes
-✔ Would you like to use ESLint? …  Yes
-✔ Would you like to use Tailwind CSS? …  Yes
+✔ Would you like to use TypeScript? … Yes
+✔ Would you like to use ESLint? … Yes
+✔ Would you like to use Tailwind CSS? … Yes
 ✔ Would you like your code inside a `src/` directory? … Yes
 ✔ Would you like to use App Router? (recommended) … Yes
 ✔ Would you like to use Turbopack for `next dev`? … No
 ? Would you like to customize the import alias (`@/*` by default)? › No
 
-# coloca em ordem as classes do tailwind
+// coloca em ordem as classes do tailwind
 npm i -D prettier-plugin-tailwindcss@0.6.11
 
 npm i -D prettier@3.5.3
@@ -20,7 +20,7 @@ npm i drizzle-orm@0.43.1 pg@8.15.6
 
 npm i -D drizzle-kit@0.31.1
 
-# aplica o schema ao BD
+// aplica o schema ao BD
 npx drizzle-kit push
 
 npx drizzle-kit studio
@@ -37,5 +37,8 @@ npx shadcn@2.5.0 add input label
 
 npx shadcn@2.5.0 add form
 
+npm i dotenv@16.5.0
 
+npm install better-auth@1.2.7
 
+npx @better-auth/cli@1.2.7 generate
