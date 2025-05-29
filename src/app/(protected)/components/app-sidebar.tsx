@@ -10,7 +10,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-import { Avatar } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -58,7 +58,7 @@ const items = [
 export function AppSidebar() {
   const router = useRouter();
 
-  //const session = authClient.useSession();
+  const session = authClient.useSession();
 
   const handleSignOut = async () => {
     await authClient.signOut({
@@ -98,8 +98,14 @@ export function AppSidebar() {
           <SidebarMenuItem>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <SidebarMenuButton>
-                  <Avatar></Avatar>
+                <SidebarMenuButton size="lg">
+                  <Avatar>
+                    <AvatarFallback>F</AvatarFallback>
+                  </Avatar>
+                  <div>
+                    <p className="text-sm">{session.data?.user.clinic.name}</p>
+                    <p className="text-sm text-muted-foreground">{session.data?.user.email}</p>
+                  </div>
                 </SidebarMenuButton>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
