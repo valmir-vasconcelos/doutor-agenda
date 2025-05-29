@@ -1,8 +1,12 @@
 "use client";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Loader2 } from "lucide-react";
+import { isRedirectError } from "next/dist/client/components/redirect-error";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 import { z } from "zod";
 
+import { createClinicAction } from "@/actions/create-clinic";
 import { Button } from "@/components/ui/button";
 import { DialogFooter } from "@/components/ui/dialog";
 import {
@@ -27,8 +31,19 @@ const ClinicForm = () => {
     },
   });
 
-  function onSubmit(values: z.infer<typeof clinicFormSchema>) {
-    console.log(values);
+  const onSubmit = async (data: z.infer<typeof clinicFormSchema>) => {
+    try {
+      await createClinicAction(data.name);
+      //toast.success("Clínica criada com sucesso!");
+      //form.reset();
+    } catch (error) {
+      if (isRedirectError(error)) {
+        // Se for um erro de redirecionamento, não faça nada
+        return;
+      }
+      console.error("Erro ao criar clínica:", error);
+      toast.error("Erro ao criar clínica.");
+    }
   }
 
   return (
@@ -47,10 +62,12 @@ const ClinicForm = () => {
             </FormItem>
           )}
         />
+        <DialogFooter>
+          <Button type="submit" disabled={form.formState.isSubmitting} >
+            {form.formState.isSubmitting && (<Loader2 className="h-4 w-4 animate-spin" />)} Criar Clínica
+          </Button>
+        </DialogFooter>
       </form>
-      <DialogFooter>
-        <Button type="submit">Criar clínica</Button>
-      </DialogFooter>
     </Form>
   );
 };
