@@ -41,6 +41,10 @@ npx shadcn@2.5.0 add sonner
 
 npx shadcn@2.5.0 add dialog
 
+npx shadcn@2.5.0 add sidebar
+
+npx shadcn@2.5.0 add dropdown-menu
+
 npm i dotenv@16.5.0
 
 npm install better-auth@1.2.7
