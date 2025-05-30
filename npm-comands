@@ -47,8 +47,12 @@ npx shadcn@2.5.0 add dropdown-menu
 
 npx shadcn@2.5.0 add avatar
 
+npx shadcn@2.5.0 add select
+
 npm i dotenv@16.5.0
 
 npm install better-auth@1.2.7
 
 npx @better-auth/cli@1.2.7 generate
+
+npm i react-number-format@5.4.4
