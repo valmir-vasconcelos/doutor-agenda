@@ -58,3 +58,5 @@ npx @better-auth/cli@1.2.7 generate
 npm i react-number-format@5.4.4
 
 npm i next-safe-action@7.10.8
+
+npm i dayjs@1.11.13
