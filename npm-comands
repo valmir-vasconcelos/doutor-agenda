@@ -49,6 +49,12 @@ npx shadcn@2.5.0 add avatar
 
 npx shadcn@2.5.0 add select
 
+npx shadcn@2.5.0 add card
+
+npx shadcn@2.5.0 add badge
+
+npx shadcn@2.5.0 add alert-dialog
+
 npm i dotenv@16.5.0
 
 npm install better-auth@1.2.7

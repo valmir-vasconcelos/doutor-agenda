@@ -74,7 +74,7 @@ interface UpsertDoctorFormProps {
 
 const UpsertDoctorForm = ({ doctor, onSuccess }: UpsertDoctorFormProps) => {
     const form = useForm<z.infer<typeof formSchema>>({
-        shouldUnregister: true,
+        shouldUnregister: true, // limpa os campos do formulário
         resolver: zodResolver(formSchema),
         defaultValues: {
             name: doctor?.name ?? "",
