@@ -59,6 +59,10 @@ npx shadcn@2.5.0 add table
 
 npx shadcn@2.5.0 add popover calendar
 
+npx shadcn@2.5.0 add chart
+
+npx shadcn@2.5.0 add progress
+
 npm i @tanstack/react-table@8.21.3
 
 npm i @tanstack/react-query@5.76.2
@@ -79,3 +83,8 @@ npm i react-number-format@5.4.4
 npm i next-safe-action@7.10.8
 
 npm i dayjs@1.11.13
+
+npm i stripe@18.2.0 @stripe/stripe-js@7.3.1 --legacy-peer-deps
+
+// biblioteca para trabalhar com states_url
+npm i nuqs@2.4.3 --legacy-peer-deps
